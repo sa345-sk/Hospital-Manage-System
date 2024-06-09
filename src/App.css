@@ -61,13 +61,13 @@ main {
 .update_profile form {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   
    grid-template-areas: 
    "company-1 username-1 email-1"
    "company-2 username-2 email-2"
    "f-name-1 . s-name-1"
    "f-name-2 . s-name-2"
-   "adress-1 address-1 address-1"
+   "address-1 address-1 address-1"
    "address-2 address-2 address-2"
    "city-1 country-1 pc-1"
    "city-2 country-2 pc-2"
@@ -75,8 +75,17 @@ main {
    "about-2 about-2 about-2"
    " . . btn"
    ;
+   padding: 10px;
 }
-
+.update_profile form input, textarea, button {
+   border: 1px solid #a8a8a8;
+   border-radius: 5px;
+   margin: 10px;
+}
+.update_profile form label {
+  color: #5a5a5a;
+  margin: 10px;
+}
 /* .update_profile form .company-1 {
    grid-column: 1 / 2;
 }
@@ -85,4 +94,15 @@ main {
 }
 .update_profile form .email-1 {
    grid-column: 3 / 4;
+} */
+.update_profile {
+   border-radius: 5px;
+   border: 1px solid #a8a8a8;
+   height: 620px;
+}
+.update_profile form input, textarea:focus {
+   outline: none;
+}
+/* .update_profile form button {
+   
 } */
