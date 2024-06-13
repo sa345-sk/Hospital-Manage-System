@@ -106,3 +106,29 @@ main {
 /* .update_profile form button {
    
 } */
+.profile_details {
+   border-radius: 5px;
+   border: 1px solid #a8a8a8;
+   margin-left:  15px;
+   height: 400px;
+   width: 330px
+}
+.profile_images {
+   width: 100%;
+   height: 170px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+} 
+.profile_images .img {
+   width: 150px;
+   height: 84%;
+   border-radius: 100%;
+   border: 5px solid #8f8f8f;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+   left: 27%;
+   top: 80px;
+} 
