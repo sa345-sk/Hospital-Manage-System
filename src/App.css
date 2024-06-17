@@ -39,7 +39,6 @@ main {
 .update_profile form {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   
    grid-template-areas: 
    "company-1 username-1 email-1"
    "company-2 username-2 email-2"
@@ -102,7 +101,27 @@ main {
 } 
 
 .table {
-  overflow: scroll;
-  width: 80%;
+   overflow: scroll;
+   white-space: nowrap;
+   width: 88%;
+   height: fit-content;
+   padding: 2px;
 }
 
+.table .headers {
+   width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+   grid-template-areas: 
+   "HID HNAME HDATE HDN HP HE";
+   height: fit-content;
+}
+.table .headers h4 {
+   font-weight: bold;
+}
+.table .body a{
+   width: 100%;
+   height: fit-content;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
