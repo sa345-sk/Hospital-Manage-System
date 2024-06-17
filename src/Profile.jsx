@@ -19,7 +19,7 @@ const Profile = () => {
       <div className="profile_content flex flex-row flex-wrap m-ma w-op h-fit mt-5">
         <div className="update_profile w-4/6 shadow bg-white ">
           <h3 className="text-2xl ml-4 mt-3">Edit Profile</h3>
-          <form>          
+          <form className="w-full h-full">          
             <label  style={{gridArea: 'company-1'}}>Company (DISABLED)</label>
               <input type="text" defaultValue="Hospital" disabled className="hover:cursor-not-allowed" style={{ gridArea: 'company-2' }} />
             <label style={{gridArea: 'username-1'}}>Username</label>
