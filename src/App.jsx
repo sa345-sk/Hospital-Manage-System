@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <div className="app flex">
         <Sidebar/>
-        <main className='w-full h-fit bg-gray-100'>
+        <main className='w-full bg-gray-100 main'>
            <Routes>
             <Route path='/' element={<Reports/>}/>
             <Route path='/patientmanagement' element={<Patient/>}/>

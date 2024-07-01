@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+   height: 100vh;
+}
+.app {
+   height: 100vh;
+}
 .sidebar-title {
    border-bottom: 1px solid #cbd5e1;
    color: #fafafa;
@@ -124,4 +129,54 @@ main {
    height: fit-content;
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.billing-invoicing {
+   width: 97%;
+   margin: 0 auto;
+   border-radius: 7px;
+   margin-top: 12px;
+   height: fit-content;
+}
+.billing-details {
+   width: 100%;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-between;
+}
+.billing-table tbody .billing-items {
+   display: grid;
+   grid-template-columns: 320px 320px;
+}
+
+.total {
+   margin: 0 15px 0 15px;
+   border-bottom: 1px solid #c3c3c3;
+} 
+
+.add-items .inputs input{
+    height: 50px;
+    border-radius: 5px;
+}
+
+.billing-pdf {
+   height: 600px;
+}
+.main {
+   height: fit-content
+}
+.dialog {
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.5);
+   width: 100%;
+   height: 100vh;
+}
+.wrapper {
+   background: whitesmoke;
+   width: 410px;
+   padding: 10px;
+   margin: 0 auto;
+   margin-top: 200px;
+   border-radius: 5px;
 }

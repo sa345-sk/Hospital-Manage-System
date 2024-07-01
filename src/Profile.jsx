@@ -19,7 +19,7 @@ const Profile = () => {
       <div className="profile_content flex flex-row flex-wrap m-ma w-op h-fit mt-5">
         <div className="update_profile w-4/6 shadow bg-white ">
           <h3 className="text-2xl ml-4 mt-3">Edit Profile</h3>
-          <form className="w-full h-full">          
+          <form className="w-full h-3/4">          
             <label  style={{gridArea: 'company-1'}}>Company (DISABLED)</label>
               <input type="text" defaultValue="Hospital" disabled className="hover:cursor-not-allowed" style={{ gridArea: 'company-2' }} />
             <label style={{gridArea: 'username-1'}}>Username</label>
@@ -52,14 +52,15 @@ const Profile = () => {
              <p>{username}</p>
               <p>{`"${aboutMe}"`}</p>
            </div>
-           <div className="social_info w-full mt-5">
-             facebook
-             instagram
-             x
+           <div className="social_info w-full mt-5 p-5">
+             Email: somone@example.com
+             <br/>
+             Phone: 123456789101
            </div>
         </div>
       </div>
-    </div> );
+    </div> 
+    );
 }
  
 export default Profile   
