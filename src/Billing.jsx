@@ -2,12 +2,15 @@
 import { useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 import Dialog from "./components/Dialog";
+import Message from "./components/Message";
+import shadows from "@mui/material/styles/shadows";
 const Billing = () => {
     const ref = useRef()
     const [addItem, setAddItem] = useState(false)
     const [list, setList] = useState([])
     const [product, setProduct] = useState()
     const [amount, setAmount] = useState()
+    const [showMssg, setShowMssg] = useState(false)
     const showItmeDialog = () => {
         if (addItem == false) {
             setAddItem(true)
@@ -16,13 +19,22 @@ const Billing = () => {
         }
     }
     const addProduct = () => {
-        list.push({product: product, amount: amount})
-        setAddItem(false)
-        console.log(list);
+        if (product!== undefined && amount!== undefined) {
+            list.push({ product: product, amount: amount })
+            setAddItem(false)
+        } else {
+            setShowMssg(true)
+            setTimeout(() => {
+               setShowMssg(false)
+            }, 4000)
+        }
     }
     let sum = 0
     list.forEach(amount => sum += parseInt(amount.amount))
     // 1366 and 679
+    const mssgControl = () => {
+        setShowMssg(false)
+    }
     return ( 
         <div className="billing-invoicing bg-white shadow">
             <div className="billing-pdf p-3" ref={ref}>
@@ -38,39 +50,41 @@ const Billing = () => {
                     </div>
                 </div>
                 <div className="billing-info">
-                    <table className="billing-table w-full h-fit m-ma mt-11" >
-                        <thead style={{ borderBottom: '1px  solid #c3c3c3'}} className="p-14 w-full">
-                            <tr>
+                    <table className="billing-table w-full m-ma mt-11" >
+                        <thead style={{ borderBottom: '1px  solid #c3c3c3'}} className="w-full">
+                            <tr className="flex justify-between w-full">
                                 <th className="w-80 text-left"><h5>Items</h5></th>
-                                <th className="w-80 text-right"><h5>Amount</h5></th>
+                                <th className="w-80 text-left"><h5>Amount</h5></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="w-fit">
                             <tr style={{borderBottom: '1px solid #c3c3c3'}} className="mt-3 pb-2 w-full">
                                 {
                                     list? 
                                     list.map((item, i) => {
                                         return (
-                                            <td  key={i}>
+                                            <td key={i} className="flex justify-between w-full">
                                                 <p className="w-80 text-left">{item.product}</p>
-                                                <p className="w-80">N{item.amount}</p>
+                                                <p className="w-80 text-left">N{item.amount}</p>
                                             </td>
                                         )
                                     }):null
                                 }
                             </tr>
-                            <tr style={{ borderBottom: '1px solid #c3c3c3'}} className="w-full flex  justify-between">
-                                <td className="w-80">
-                                    <p><span>Total Amount: </span></p>
-                                    <p><span>Payable Amount: </span></p>
-                                </td>
-                                <td className="w-80">
-                                    <p><span>N{sum}</span></p>
-                                    <p><span>N{sum}</span></p>
+                            <tr style={{ borderBottom: '1px solid #c3c3c3'}} >
+                                <td className="flex justify-between w-full">
+                                    <div className="w-80">
+                                        <p><span>Total Amount: </span></p>
+                                        <p><span>Payable Amount: </span></p>
+                                    </div>
+                                    <div className="w-80">
+                                        <p><span>N{sum}</span></p>
+                                        <p><span>N{sum}</span></p>
+                                    </div>
                                 </td>
                             </tr>
                             <tr className="total">
-                                <td><strong className="text-red-500 flex justify-between"><span>Total: </span><span className="mr-72">N{sum}</span></strong></td>
+                                <td><strong className="text-red-500 flex justify-between"><span className="w-80 text-left">Total: </span><span className="w-80 flex justify-between">N{sum}</span></strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -79,10 +93,11 @@ const Billing = () => {
                    <Dialog showItmeDialog={showItmeDialog} setProduct={setProduct} setAmount={setAmount} addProduct={addProduct}/>:null
                 }
             </div> 
-            <button onClick={showItmeDialog}>Add Items</button>
-            <ReactToPrint trigger={() => (<button>Print</button>)} documentTitle={`INVOICE 1234`} content={() => ref.current}/>
+            <button onClick={showItmeDialog} className="bg-sky-b w-28 hover:bg-sky-b-h focus:outline-none">Add Items</button>
+            <ReactToPrint trigger={() => (<button className="bg-sky-b w-28 hover:bg-sky-b-h">Print</button>)} documentTitle={`INVOICE 1234`} content={() => ref.current}/>
+            {showMssg ? <Message messageType="Error 😥" errorMssg='Kindly fill the Inputs before adding it to the Invoice' control={mssgControl}/>:null}
     </div> 
     );
 }
  
-export default Billing;
+export default Billing; 

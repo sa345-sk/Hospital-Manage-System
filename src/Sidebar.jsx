@@ -12,7 +12,7 @@ const Sidebar = () => {
                     <Link to='/billinginvoicing'><div className=" w-52 p-4 hover:bg-div-h text-main" style={{ borderRadius: '5px' }}>Billing & Invoicing</div></Link>
                     <Link to='/staffmanagement'><div className="w-52 p-4 hover:bg-div-h text-main" style={{ borderRadius: '5px' }}>Staff Management</div></Link>
                     <Link to='/userprofile'><div className="w-52 p-4 hover:bg-div-h text-main" style={{ borderRadius: '5px' }}>User Profile</div></Link>
-                    <Link to='/schedules'><div className="w-52 p-4 hover:bg-div-h text-main" style={{ borderRadius: '5px' }}>Schedules</div></Link>
+                    <Link to='/schedule'><div className="w-52 p-4 hover:bg-div-h text-main" style={{ borderRadius: '5px' }}>Schedules</div></Link>
                     <Link to='/inventorymanagement'><div className="w-52 p-4 hover:bg-div-h text-main" style={{ borderRadius: '5px' }}>Inventory Management</div></Link>
                     <Link to='/prescription'><div className="w-52 p-4 hover:bg-div-h text-main" style={{ borderRadius: '5px' }}>Prescription</div></Link>
                 </div>

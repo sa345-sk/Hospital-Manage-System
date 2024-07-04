@@ -7,6 +7,7 @@ import Staff from './Staff'
 import Unknown from './Unknown'
 import Profile from './Profile'
 import Billing from './Billing'
+import Schedule from './Schedule' 
 const App = () => {
   return (
     <Router>
@@ -19,6 +20,7 @@ const App = () => {
             <Route path='/staffmanagement' element={<Staff/>}/>
             <Route path='/userprofile' element={<Profile/>}/>
             <Route path='/billinginvoicing' element={<Billing />}/>
+            <Route path='schedule' element={<Schedule/>}/>
             <Route path='*' element={<Unknown/>}/>
            </Routes>
         </main>
