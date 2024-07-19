@@ -8,7 +8,7 @@ const Home = () => {
         </div>
             <p className="m-2 text-1.5">Only <strong>Authenticated</strong> Officials can login.</p>
        <div className="login">
-         <form>
+        <form className="flex">
             <input type="text" required/>
             <input type="password" required/>
             <button>Login</button>

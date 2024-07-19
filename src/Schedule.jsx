@@ -9,21 +9,15 @@ const Schedule = () => {
   const [task, setTask] = useState('');
   const [showMssg, setShowMssg] = useState(false)
   console.log(state);
-//  try {
-//    useEffect(() => {
-//      function up() {
-//        dispatch({type: 'SET_TASK', payload: ['tim', 'op']})
-//      }
-//      up()
-//    }, [dispatch])
-//  } catch (error) {
-  
-//  }
+useEffect(() => {
+     dispatch({type: 'SET_TASK', payload: [{id: 1, task: 'eat'}]})
+     console.log(state);
+}, [dispatch, state])
    tasks.push({task: task})
  
   const addTasks = () => {
     if(task != '' && task != undefined) {
-      dispatch({ type: 'SET_TASK', payload: [tasks]})
+      dispatch({ type: 'UPDATE', payload: [task]})
       console.log(state);
       setTask('')
     } else {

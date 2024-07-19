@@ -12,7 +12,7 @@ export const reducer = (state, action) => {
 }
 
 export const TasksProvider = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, {tasks: null})
+    const [state, dispatch] = useReducer(reducer, {tasks: []})
     return (
         <TaskContext.Provider value={{...state, dispatch}}>
             {children}
