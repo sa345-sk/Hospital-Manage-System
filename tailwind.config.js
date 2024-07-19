@@ -27,13 +27,17 @@ export default {
         '100': '400px',
         '105': '415px',
         '110': '430px',
-        '115': '445px'
+        '115': '445px',
+        '75': '88%'
       },
       borderColor: {
         'err-border': '#ec2727'
       },
       height: {
         'hv': '100vh'
+      },
+      fontSize: {
+        '1.5': '17px'
       }
     },
   },
