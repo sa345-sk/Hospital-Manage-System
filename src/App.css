@@ -11,26 +11,22 @@ body {
    border-bottom: 1px solid #cbd5e1;
    color: #fafafa;
 }
-
 .sidebar {
    background-image: url('./img/sidebar-2.jpg');
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
 }
-
 .ss {
    background: rgba(0, 0, 0, 0.3);
 }
 .info p {
    padding: 6.6px;
 }
-
 .card:hover {   
    transition: all 0.3s ease-in-out 0.3s;
    filter: drop-shadow(0 0 1em #9b9b97);
 }
-
 main {
    margin-left: 256px;
 }
@@ -40,7 +36,6 @@ main {
 .update_profile form input{
     width: 170px;
 }
-
 .update_profile form {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
@@ -68,7 +63,6 @@ main {
   color: #5a5a5a;
   margin: 10px;
 }
-
 .update_profile {
    border-radius: 5px;
    border: 1px solid #a8a8a8;
@@ -104,15 +98,12 @@ main {
    left: 27%;
    top: 80px;
 } 
-
 .table {
-   overflow: scroll;
    white-space: nowrap;
-   width: 88%;
+   width: 100%;
    height: fit-content;
    padding: 2px;
 }
-
 .table .headers {
    width: 100%;
    display: grid;
@@ -162,7 +153,7 @@ main {
    height: 600px;
 }
 .main {
-   height: fit-content
+   height: fit-content;
 }
 .dialog {
    position: absolute;
@@ -171,7 +162,6 @@ main {
    background: rgba(0, 0, 0, 0.5);
    width: 100%;
    height: 100vh;
-
 }
 .wrapper {
    background: whitesmoke;
@@ -180,5 +170,153 @@ main {
    margin: 0 auto;
    margin-top: 200px;
    border-radius: 5px;
-   
+}
+.r-5 {
+   border-radius: 7px;
+}
+.task-input {
+   width: 70%;
+   top: 90%;
+   left: 25%;
+}
+.mssg {
+   left: 2.5%;
+   top: 2%;
+}
+.table-p {
+   width: 90%;
+   height: fit-content;
+   background: #c3c3c3;
+   margin: 0 auto;
+}
+.table-p thead {
+   background: #e0e0e0;
+}
+.table-p th {
+   text-align: left;
+   padding-top: 5%;
+   padding-bottom: 1%;
+}
+.table-p tr {
+   border-bottom: 1px solid #d4d4d4;
+   padding: 5px;
+}
+.table-p tr:hover {
+   background: #dfdfdf;
+   cursor: pointer;
+}
+.table-container {
+   margin: 0 auto;
+   width: 95%;
+   margin-top: 5%;
+}
+.sidebar-container {
+   min-height: 100%;
+}
+.sidebar-links {
+   padding-bottom: 100px;
+}
+.copyright {
+   position: relative;
+   margin-top: -100px;
+   clear: both;
+}
+@media (max-width: 640px) {
+    .sidebar {
+      width: 0px;
+      overflow: hidden;
+      }
+    .main {
+      width: 100vw;
+      height: 100vh;
+      margin-left: 0;
+    }
+    .nav .nav-header h2 {
+       font-size: 20px;
+    }
+    .home-header h2 {
+        padding: 15px;
+    }
+   .home-auth {
+      padding: 5px;
+   }
+
+   .home .login  {
+      padding: 10px;
+   }
+   .home .login form input {
+      margin-top: 5px;
+   }
+   .home .login form p {
+      font-size: 20px;
+   }
+   .task-input {
+      width: 90%;
+      left: 7%;
+      right: 0;
+   }
+   .mssg {
+      left: 2.5%;
+   }
+   .table-container {
+      width: 95%;
+      margin: 0 auto;
+      overflow-x: scroll;
+      margin-top: 5%;
+   }
+   .table-p {
+      width: 200%;
+   }
+   .billing-headers {
+      width: 50%;
+   }
+   .billing-table {
+      width: 200px;
+   }
+   .billing-info {
+      overflow: hidden;
+   }
+   .card {
+      height: 160px;
+   }
+   .card img {
+      width: 130px;
+      height: 130px;
+   }
+   .card .info {
+      width: 70%;
+      overflow-y: scroll;
+   }
+   .update_profile {
+      width: 100%;
+      height: fit-content;
+   }
+   .update_profile form{
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+   }
+   .update_profile form input {
+      width: 95%;
+   }
+   .profile_details {
+      margin: 0 auto;
+      margin-top: 5%;
+      width: 100%;
+      margin-bottom: 5%;
+      height: fit-content;
+   }
+   .profile_details .img {
+      left: 32%;
+   }
+} 
+@media (min-width: 720px) and (max-width: 1024px){
+  .main {
+   height: 100vh;
+  }
+  .table-container {
+   width: 80%;
+   overflow-x: scroll;
+  }
+  
 }

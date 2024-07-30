@@ -5,20 +5,19 @@ import { useTasks } from './hooks/useTasks'
 import Navbar from './components/Navbar'
 const Schedule = () => {
   const {state, dispatch} = useTasks()
-   const [tasks, setTasks] = useState([])
+  //  const [tasks, setTasks] = useState([])
   const [task, setTask] = useState('');
   const [showMssg, setShowMssg] = useState(false)
-  console.log(state);
 useEffect(() => {
-     dispatch({type: 'SET_TASK', payload: [{id: 1, task: 'eat'}]})
+    // dispatch({ type: 'SET_TASK', payload: [{ task: 'eat' }] })
      console.log(state);
-}, [dispatch, state])
-   tasks.push({task: task})
+}, [])
+  //  tasks.push({task: task})
  
   const addTasks = () => {
-    if(task != '' && task != undefined) {
-      dispatch({ type: 'UPDATE', payload: [task]})
-      console.log(state);
+    if(task != '' && task != undefined && task.trim()) {
+      dispatch({ type: 'UPDATE', payload: {task: task}})
+      console.log('Current state:', state);
       setTask('')
     } else {
       setTimeout(() => setShowMssg(false), 4000)
@@ -30,12 +29,17 @@ useEffect(() => {
           <div className="task">
              <div className="schdules overflow-auto w-full p-2" style={{paddingBottom: '100px', height: '95.3vh'}}>
                <div className='bg-yellow-800 w-full'>
-                <span><strong>Meeting with the Director</strong></span>
-                <p>Date Of Appointment: 8/2/2024</p>
-                <p>Time: 3:00 PM</p>
+                  <span><strong>Meeting with the Director</strong></span>
+                  <p>Date Of Appointment: 8/2/2024</p>
+                  <p>Time: 3:00 PM</p>
                </div>
+               {state && state.map((task, i) => {
+                return (
+                  <p key={i}>{task}</p>
+                )
+               })}
              </div>
-            <div className="task-input fixed z-30 shadow flex ml-14" style={{ top: '90%', borderRadius: '15px', width: '70%', boxShadow: 'initial 2px #c3c3c3'}}>
+            <div className="task-input fixed z-30 shadow flex " style={{ borderRadius: '15px', boxShadow: 'initial 2px #c3c3c3'}}>
               <div className="bg-lime-500 w-10 h-9 text-center pt-1 hover:cursor-pointer" style={{ borderTopLeftRadius: '15px', borderBottomLeftRadius: '15px', borderRight: '1px solid #c3c3c3'}} onClick={addTasks}>Add</div>
                 <input type="text" className="bg-lime-500 w-75 h-9 focus:outline-none overflow-auto" onChange={(e) => setTask(e.target.value)} value={task}/>
                 <div className="w-32 h-9  flex justify-evenly pt-1 bg-lime-500" style={{ borderTopRightRadius: '15px', borderBottomRightRadius: '15px'}}>

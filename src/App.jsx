@@ -9,6 +9,8 @@ import Profile from './Profile'
 import Billing from './Billing'
 import Schedule from './Schedule' 
 import Home from './Home'
+import Inventory from './Inventory'
+import Prescrption from './Prescription'
 const App = () => {
   return (
     <Router>
@@ -23,6 +25,8 @@ const App = () => {
             <Route path='/billinginvoicing' element={<Billing />}/>
             <Route path='schedule' element={<Schedule/>}/>
             <Route path='home' element={<Home/>}/>
+            <Route path='/inventorymanagement' element={<Inventory />}/>
+            <Route path='/prescription' element={<Prescrption />}/>
             <Route path='*' element={<Unknown/>}/>
            </Routes>
         </main>

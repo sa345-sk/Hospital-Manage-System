@@ -53,7 +53,7 @@ const Profile = () => {
               <p>{`"${aboutMe}"`}</p>
            </div>
            <div className="social_info w-full mt-5 p-5">
-             Email: somone@example.com
+              Email: {email}
              <br/>
              Phone: 123456789101
            </div>

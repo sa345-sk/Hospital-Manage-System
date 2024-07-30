@@ -31,7 +31,6 @@ const Billing = () => {
     }
     let sum = 0
     list.forEach(amount => sum += parseInt(amount.amount))
-    // 1366 and 679
     const mssgControl = () => {
         setShowMssg(false)
     }
@@ -44,15 +43,15 @@ const Billing = () => {
                         <span>+234 (0) 806658239</span>
                         <p>Email: hospital@example.com</p>
                     </div>
-                    <div className="w-80">
+                    <div className="billing-headers w-80">
                         <h4 style={{ color: '#2093c6', fontSize: '24px' }}>INVOICE</h4>
                         <span>ID: 1234</span>
                     </div>
                 </div>
                 <div className="billing-info">
-                    <table className="billing-table w-full m-ma mt-11" >
+                    <table className="billing-table w-full  mt-11" >
                         <thead style={{ borderBottom: '1px  solid #c3c3c3'}} className="w-full">
-                            <tr className="flex justify-between w-full">
+                            <tr className="flex justify-between ">
                                 <th className="w-80 text-left"><h5>Items</h5></th>
                                 <th className="w-80 text-left"><h5>Amount</h5></th>
                             </tr>

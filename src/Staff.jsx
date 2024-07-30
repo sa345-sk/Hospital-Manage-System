@@ -1,18 +1,10 @@
 import S from './img/sidebar-5.jpg'
 import {Link} from 'react-router-dom'
+import Navbar from './components/Navbar';
 const Staff = () => {
     return ( 
     <div>
-            <div className="dashboard-nav w-full h-16 flex justify-between bg-zinc-200" style={{ borderBottom: '1px solid #929292' }}>
-                <div className="nav-1 flex w-fit items-center">
-                    <h2 className="p-1 text-3xl hover:cursor-pointer defaultc">Staff Mannagement</h2>
-                    <p className="p-1 hover:cursor-pointer">Notification</p>
-                </div>
-                <div className="nav-1 flex items-center w-fit">
-                    <Link className="p-1 hover:cursor-pointer">Account</Link>
-                    <p className="p-1 hover:cursor-pointer">Logout</p>
-                </div>
-            </div>
+        <Navbar title="Staff Mannagement"/>
             <div className='w-op h-fit m-ma mt-5'>
                 <Link to='/staffmanagement/:id/info'>
                     <div className='card shadow bg-white flex p-4' style={{ borderRadius: '15px' }}>

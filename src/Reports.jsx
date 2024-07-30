@@ -23,9 +23,14 @@ const Reports = () => {
   return (
     <div className="dahsboard w-full">
       <Navbar title="Reports & Analytics"/>
+      <div className="ti">
+        <div>
+          
+        </div>
+      </div>
         <div className="dashboard-items p-7 ">
-          <div className="w-4/5 p-4 bg-white shadow m-ma" style={{ borderRadius: '5px' }}><Barchart chartData={chartVals}/></div>
-        <div className="w-4/5 p-4 bg-white shadow m-ma" style={{ borderRadius: '5px' }}><Piechart chartdata={piecartvals}/></div>
+              <div className="w-4/5 p-4 bg-white shadow m-ma" style={{ borderRadius: '5px' }}><Barchart chartData={chartVals}/></div>
+            <div className="w-4/5 p-4 bg-white shadow m-ma" style={{ borderRadius: '5px' }}><Piechart chartdata={piecartvals}/></div>
         </div>
     </div>
   )
