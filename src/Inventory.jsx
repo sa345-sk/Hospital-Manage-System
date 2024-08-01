@@ -5,15 +5,21 @@ import {useState} from 'react'
 import Message from "./components/Message";
 const Inventory = () => {
   const [inventories, setInventories] = useState([])
-  const [inventory,  setInventory] = useState()
+  const [inventory,  setInventory] = useState('')
   const [price,  setPrice] = useState(0)
   const [quantity,  setQuantity] = useState(0)
-  const [amount,  setAmount] = useState(0)
+  const [amount,  setAmount] = useState()
   const [showDialog, setShowDialog] = useState(false)
   const [showMssg, setShowMssg] = useState(false)
+  const [total, setTotal] = useState(0)
+
+
   const addItems = () => {
-    if (inventory!==undefined && inventory!=='' && price!==undefined && price!==0 && quantity!==undefined &&quantity!==0 && amount!==undefined&&amount!==0) {
-      inventories.push({inventory: inventory, price: price, quantity: quantity, amount: amount})
+    if (inventory!==undefined && inventory!=='' && price!==undefined && price!==0 && quantity!==undefined &&quantity!==0) {
+      inventories.push({ inventory: inventory, price: price, quantity: quantity, amount: amount })
+      setInventory('')
+      setPrice()
+      setQuantity()
       setShowDialog(false)
       console.log(inventories);
     } else {
@@ -21,7 +27,11 @@ const Inventory = () => {
       setTimeout(() => setShowMssg(false), 4000)
     }
   }
-    return ( 
+  const calculateAmount = (price, qty) => {
+     const amount = price * qty
+      setAmount(amount)
+    }
+  return ( 
         <div>
           <Navbar title="Inventory Management"/>
           <div id="table-container" className="bg-purple-600 m-ma " style={{width: '80%', padding: '5px'}}>
@@ -51,11 +61,12 @@ const Inventory = () => {
             {showDialog?<Dialog showItmeDialog={() => {
               if (showDialog == true) setShowDialog(false)
                 else setShowDialog(true)
-            }} showInvAmount={true} showPrice={true} showQty={true} setInvAmount={setAmount} setProduct={setInventory} setPrice={setPrice} setQty={setQuantity} addProduct={addItems}/>:null}
+            }} showInvAmount={true} showPrice={true} showQty={true} invAmount={amount} setProduct={setInventory} setPrice={setPrice} setQty={setQuantity} addProduct={addItems} product={inventory} qty={quantity} price={price}  calculateTotal={calculateAmount}/>:null}
             {showMssg?<Message messageType="Error 😥" errorMssg="Kindly fill the inputs before adding." control={() => {if (showMssg == true) setShowMssg(false)
-              else setAmount(true)
+              else setShowMssg(true)
             }}/>:null}
           </div>
+          <p>{amount}</p>
         </div>
     );
 }
