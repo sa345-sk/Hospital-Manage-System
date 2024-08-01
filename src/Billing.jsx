@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 import Dialog from "./components/Dialog";
 import Message from "./components/Message";
-import shadows from "@mui/material/styles/shadows";
 const Billing = () => {
     const ref = useRef()
     const [addItem, setAddItem] = useState(false)
@@ -89,7 +88,7 @@ const Billing = () => {
                     </table>
                 </div>
                 {addItem?
-                   <Dialog showItmeDialog={showItmeDialog} setProduct={setProduct} setAmount={setAmount} addProduct={addProduct}/>:null
+                   <Dialog showItmeDialog={showItmeDialog} setProduct={setProduct} setAmount={setAmount} addProduct={addProduct} showAmount={true} showInvAmount={false} showPrice={false} showQty={false}/>:null
                 }
             </div> 
             <button onClick={showItmeDialog} className="bg-sky-b w-28 hover:bg-sky-b-h focus:outline-none">Add Items</button>

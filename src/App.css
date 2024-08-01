@@ -221,6 +221,23 @@ main {
    margin-top: -100px;
    clear: both;
 }
+.prescription-header img{
+    width: 100px;
+    height: 100px;
+}
+.prescriptions-items textarea{
+   width: 230px;
+   resize: none;
+   height: 150px;
+}
+.prescriptions-items p{
+   font-family: serif;
+   font-style: italic;
+}
+#table-container table, th, td {
+  border: 1px solid #c3c3c3;
+  border-collapse: collapse;
+}
 @media (max-width: 640px) {
     .sidebar {
       width: 0px;
