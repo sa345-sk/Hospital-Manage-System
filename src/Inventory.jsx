@@ -30,29 +30,33 @@ const Inventory = () => {
     }
     let sum = 0
     inventories.forEach(amount => sum += parseInt(amount.amount))
+  const styles = {
+    border: '1px solid #c3c3c3',
+    borderCollapse: 'collapse'
+  }
   return ( 
         <div>
           <Navbar title="Inventory Management"/>
           <div id="table-container" className="m-ma " style={{width: '80%', padding: '5px'}}>
-            <table  className="w-full">
+            <table  className="w-full" style={styles}>
               <thead>
                 <tr>
-                  <th className="text-left">Item</th>
-                  <th className="text-left">Price</th>
-                  <th className="text-left">Quantity</th>
-                  <th className="text-left">Amount</th>
-                  <th className="text-left">Actions</th>
+                  <th className="text-left" style={styles}>Item</th>
+                  <th className="text-left" style={styles}>Price</th>
+                  <th className="text-left" style={styles}>Quantity</th>
+                  <th className="text-left" style={styles}>Amount</th>
+                  <th className="text-left" style={styles}>Actions</th>
                 </tr>
               </thead>
               <tbody>
               { inventories?.map((inventory, i) => {
                 return (
                   <tr key={i}>
-                    <td>{inventory.inventory}</td>
-                    <td>N{inventory.price}</td>
-                    <td>{inventory.quantity}</td>
-                    <td>N{inventory.amount}</td>
-                    <td><button className="border-none p-1 bg-yellow-600">Delete</button></td>
+                    <td style={styles}>{inventory.inventory}</td>
+                    <td style={styles}>N{inventory.price}</td>
+                    <td style={styles}>{inventory.quantity}</td>
+                    <td style={styles}>N{inventory.amount}</td>
+                    <td style={styles}><button className="border-none p-1 bg-yellow-600">Delete</button></td>
                   </tr>
                 )
                 })}

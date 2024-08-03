@@ -39,7 +39,7 @@ const Profile = () => {
             <label style={{gridArea: "pc-1"}}>Postal Code</label>
               <input placeholder="Zip Code" className="" type="number" style={{ gridArea: 'pc-2'}} onChange={e => setPostalCode(e.target.value)}/>
             <label style={{gridArea: "about-1"}}>About Me</label>
-              <textarea style={{ gridArea: 'about-2',height: '95px' }} onChange={e => setAboutMe(e.target.value)}></textarea>
+              <textarea style={{ gridArea: 'about-2',height: '95px', resize: 'none' }} onChange={e => setAboutMe(e.target.value)}></textarea>
             <button style={{gridArea: "btn"}} className="bg-blue-500 w-32">Update Profile</button>
           </form>
         </div>

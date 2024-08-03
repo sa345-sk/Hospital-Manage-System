@@ -234,10 +234,8 @@ main {
    font-family: serif;
    font-style: italic;
 }
-#table-container table, th, td {
-  border: 1px solid #c3c3c3;
-  border-collapse: collapse;
-}
+
+/*ABOMINABLE*/
 @media (max-width: 640px) {
     .sidebar {
       width: 0px;

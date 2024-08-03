@@ -7,6 +7,7 @@ const Home = () => {
             <h2>Welcome, to <strong>Hospital Management System!</strong></h2>
         </div>
             <p className="m-2 text-1.5 home-auth">Only             <strong>Authenticated</strong> Officials can login.</p>
+            <p>Manage <strong>Effectively</strong> and <strong>Efficiently.</strong></p>
        <div className="login bg-orange-500 w-100 m-ma" style={{height: '300px'}}>
             <form className="flex w-full h-full flex-row flex-wrap p-1">        
                 <input type="text" required className="w-75 m-ma mt-1 r-5 outline-none" placeholder="Email or Username" style={{height: '40px'}}/>
