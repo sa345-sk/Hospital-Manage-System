@@ -11,6 +11,7 @@ import Schedule from './Schedule'
 import Home from './Home'
 import Inventory from './Inventory'
 import Prescrption from './Prescription'
+import Footer from './Footer'
 const App = () => {
   return (
     <Router>
@@ -29,6 +30,7 @@ const App = () => {
             <Route path='/prescription' element={<Prescrption />}/>
             <Route path='*' element={<Unknown/>}/>
            </Routes>
+            <Footer></Footer>
         </main>
       </div>
     </Router>

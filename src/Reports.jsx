@@ -116,7 +116,7 @@ const Reports = () => {
                  </div>
               </div>
             </div>
-              <div className="p-4 bg-white shadow " style={{ borderRadius: '5px', width: '60%',  }}>
+              <div className="p-4 bg-white shadow " style={{ borderRadius: '5px', width: '90%', margin: '0 auto', marginTop: '10px'  }}>
                   <h3 className="font-bold">Emergency Department Statistics</h3>
                   <p>ER VISITS:</p>
                   <p className="text-center">Month: {date.getMonth() == 7 ? 'AUGUST' : 'September'}</p>

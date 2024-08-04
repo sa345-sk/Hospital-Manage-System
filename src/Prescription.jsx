@@ -20,7 +20,7 @@ const Prescrption = () => {
     }
     
     return ( 
-        <div className="prescription p-2 w-full">
+        <div className="prescription p-2 w-full h-full" style={{marginBottom: '50px'}}>
             <div className="prescription-header flex justify-between">
                 <img src={logo} alt="" />
                 <div className='pt-5'>

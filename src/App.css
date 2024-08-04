@@ -247,6 +247,9 @@ main {
    width: 300px;
  
 }
+.footer-links:hover {
+   text-decoration: underline;
+}
 /*ABOMINABLE*/
 @media (max-width: 640px) {
     .sidebar {

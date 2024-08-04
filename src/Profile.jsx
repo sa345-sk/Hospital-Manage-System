@@ -14,7 +14,7 @@ const Profile = () => {
   const [postalCode, setPostalCode] = useState('')
   const [aboutMe, setAboutMe] = useState('')
     return ( 
-    <div className="profile">
+    <div className="profile" style={{marginBottom: '50px'}}>
       <Navbar title="User Profile"/>
       <div className="profile_content flex flex-row flex-wrap m-ma w-op h-fit mt-5">
         <div className="update_profile w-4/6 shadow bg-white ">
