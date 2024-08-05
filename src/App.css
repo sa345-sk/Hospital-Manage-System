@@ -234,21 +234,40 @@ main {
    font-family: serif;
    font-style: italic;
 }
-.main {
-   overflow: unset;
-}
+
 .analytics-info {
    width: 100%;
-   margin: 0 auto;
    height: fit-content;
-   overflow-x: scroll;
+   overflow-x: auto;
+   padding: 10px;
 }
 .analytics-info div{
    width: 300px;
- 
+
 }
 .footer-links:hover {
    text-decoration: underline;
+}
+footer div {
+   width: 50%;
+}
+.total-patient {
+   width: 50%;
+}
+.revenue {
+   width: 45%;
+   margin-left: 1%;
+}
+.gender {
+   width: 50%;
+}
+.PF {
+   width: 48%;
+}
+.ER {
+   width: 90%;
+   margin: 0 auto;
+   margin-top: 10px;
 }
 /*ABOMINABLE*/
 @media (max-width: 640px) {
@@ -258,7 +277,7 @@ main {
       }
     .main {
       width: 100vw;
-      height: 100vh;
+      height: fit-content;
       margin-left: 0;
     }
     .nav .nav-header h2 {
@@ -339,6 +358,22 @@ main {
    .profile_details .img {
       left: 32%;
    }
+  footer {
+   width: 100%;
+   flex-flow: row wrap;
+   padding: 5px;
+  } 
+  footer div {
+   width: 100%;
+   margin: 5px;
+  }
+  .dashboard-items div{
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+    margin-bottom: 3%;
+  }
+  
 } 
 @media (min-width: 720px) and (max-width: 1024px){
   .main {

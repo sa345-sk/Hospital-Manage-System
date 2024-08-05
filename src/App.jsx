@@ -18,18 +18,20 @@ const App = () => {
       <div className="app flex">
         <Sidebar/>
         <main className='w-full bg-gray-100 main'>
-           <Routes>
-            <Route path='/' element={<Reports/>}/>
-            <Route path='/patientmanagement' element={<Patient/>}/>
-            <Route path='/staffmanagement' element={<Staff/>}/>
-            <Route path='/userprofile' element={<Profile/>}/>
-            <Route path='/billinginvoicing' element={<Billing />}/>
-            <Route path='schedule' element={<Schedule/>}/>
-            <Route path='home' element={<Home/>}/>
-            <Route path='/inventorymanagement' element={<Inventory />}/>
-            <Route path='/prescription' element={<Prescrption />}/>
-            <Route path='*' element={<Unknown/>}/>
-           </Routes>
+          <section className="routes">
+              <Routes>
+                <Route path='/' element={<Reports/>}/>
+                <Route path='/patientmanagement' element={<Patient/>}/>
+                <Route path='/staffmanagement' element={<Staff/>}/>
+                <Route path='/userprofile' element={<Profile/>}/>
+                <Route path='/billinginvoicing' element={<Billing />}/>
+                <Route path='schedule' element={<Schedule/>}/>
+                <Route path='home' element={<Home/>}/>
+                <Route path='/inventorymanagement' element={<Inventory />}/>
+                <Route path='/prescription' element={<Prescrption />}/>
+                <Route path='*' element={<Unknown/>}/>
+              </Routes>
+          </section>
             <Footer></Footer>
         </main>
       </div>

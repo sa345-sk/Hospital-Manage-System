@@ -41,44 +41,44 @@ const Reports = () => {
   return (
     <div className="dahsboard w-full">
       <Navbar title="Reports & Analytics"/>
-      <div className="analytics-info p-2 ">
+      <div className="analytics-info ">
         <div className="flex ">
-          <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px'}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2">
+          <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px',}}>
+            <div className="h-12 w-75 m-ma flex justify-between pt-2 p-2">
               <span>Available Beds:</span>
               <strong>15</strong>
             </div>
-            <div className="flex justify-between m-ma w-75" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
+            <div className="flex justify-between m-ma w-75 pl-2 pr-2 " style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
               <span>Total Beds:</span>
               <span>600</span>
             </div>
           </div>
           <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px'}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700">
+            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700 p-2">
               <span>Failed Appointment:</span>
               <strong>15</strong>
             </div>
-            <div className="flex justify-between m-ma w-75" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
+            <div className="flex justify-between m-ma w-75 pl-2 pr-2" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
               <span>Total Appointment (per week):</span>
               <span>50</span>
             </div>
           </div>
           <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px'}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700">
+            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700 p-2">
               <span>Health Trends:</span>
               <strong>COVID-19</strong>
             </div>
-            <div className="flex justify-between m-ma w-75" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
+            <div className="flex justify-between m-ma w-75 pl-2 pr-2" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
               <span>Total Cases (per week):</span>
               <span>120</span>
             </div>
           </div>
           <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px'}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700">
+            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700 p-2">
               <span>Global Outbreak:</span>
               <strong>Cancer</strong>
             </div>
-            <div className="flex justify-between m-ma w-75" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
+            <div className="flex justify-between m-ma w-75 pl-2 pr-2" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
               <span>Total Cases (per week):</span>
               <span>50</span>
             </div>
@@ -86,13 +86,13 @@ const Reports = () => {
         </div>
       </div>
         <div className="dashboard-items p-3 flex flex-row flex-wrap">
-              <div className="p-4 bg-white shadow " style={{ borderRadius: '5px', width: '50%',  }}><Barchart chartData={chartVals}/></div>
-        <div className="p-4 bg-white shadow " style={{ borderRadius: '5px', width: '45%', marginLeft: '1%'}}>
+              <div className="p-4 bg-white shadow total-patient" style={{ borderRadius: '5px'}}><Barchart chartData={chartVals}/></div>
+        <div className="p-4 bg-white shadow  revenue" style={{ borderRadius: '5px',}}>
             <p className="text-center">Month: {date.getMonth() == 7 ? 'AUGUST' : 'September'}</p>
           <Linechart chartdata={barchart}/>
         </div>
-            <div className="p-4 bg-white shadow " style={{ borderRadius: '5px', width: '50%',  }}><Piechart chartdata={piecartvals}/></div>
-            <div className="p-4 bg-white shadow ml-2" style={{ borderRadius: '5px', width: '48%' }}>
+            <div className="p-4 bg-white shadow gender" style={{ borderRadius: '5px'}}><Piechart chartdata={piecartvals}/></div>
+            <div className="p-4 bg-white shadow ml-2 PF" style={{ borderRadius: '5px'}}>
               <p className="font-bold">Pateint Feedbacks</p>
               <div className="patient-complaints bg-gray-100 p-2">
                 <span className="font-serif"><strong>Pateint Complaints</strong></span>
@@ -116,7 +116,7 @@ const Reports = () => {
                  </div>
               </div>
             </div>
-              <div className="p-4 bg-white shadow " style={{ borderRadius: '5px', width: '90%', margin: '0 auto', marginTop: '10px'  }}>
+              <div className="p-4 bg-white shadow ER" style={{ borderRadius: '5px'}}>
                   <h3 className="font-bold">Emergency Department Statistics</h3>
                   <p>ER VISITS:</p>
                   <p className="text-center">Month: {date.getMonth() == 7 ? 'AUGUST' : 'September'}</p>
