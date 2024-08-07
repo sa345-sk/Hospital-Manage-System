@@ -14,10 +14,10 @@ const Profile = () => {
   const [postalCode, setPostalCode] = useState('')
   const [aboutMe, setAboutMe] = useState('')
     return ( 
-    <div className="profile" style={{marginBottom: '50px'}}>
+    <div className="profile">
       <Navbar title="User Profile"/>
       <div className="profile_content flex flex-row flex-wrap m-ma w-op h-fit mt-5">
-        <div className="update_profile w-4/6 shadow bg-white ">
+        <div className="update_profile w-fit shadow bg-white ">
           <h3 className="text-2xl ml-4 mt-3">Edit Profile</h3>
           <form className="w-full h-3/4">          
             <label  style={{gridArea: 'company-1'}}>Company (DISABLED)</label>

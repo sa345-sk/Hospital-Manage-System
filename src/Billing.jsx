@@ -34,7 +34,7 @@ const Billing = () => {
         setShowMssg(false)
     }
     return ( 
-        <div className="billing-invoicing bg-white shadow " style={{marginBottom: '50px'}}>
+        <div className="billing-invoicing bg-white shadow">
             <div className="billing-pdf p-3" ref={ref}>
                 <div className="billing-details">
                     <div className="billing-headers w-80">

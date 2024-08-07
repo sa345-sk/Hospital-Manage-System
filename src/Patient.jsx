@@ -6,9 +6,9 @@ const Patient = () => {
         { firstName: 'Abdul', secondName: 'P.O', date: '12/6/2014', diagnosis: 'Sprain', phone: '+234(0)8100520396', email: 'abdul@gmail.com'},
     ]
     return ( 
-        <div className="pateint_management w-full h-screen ">
+        <div className="pateint_management w-full">
            <Navbar title="Patient Management"/>
-           <div className="table-container">
+           <div className="table-container overflow-x-auto">
              <Table data={d}/>
            </div>
            <div>

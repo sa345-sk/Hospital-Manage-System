@@ -1,11 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
-   height: 100vh;
-}
 .app {
-   height: 100vh;
+   height: 100%;
 }
 .sidebar-title {
    border-bottom: 1px solid #cbd5e1;
@@ -16,6 +13,7 @@ body {
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+   height: 100%;
 }
 .ss {
    background: rgba(0, 0, 0, 0.3);
@@ -184,7 +182,7 @@ main {
    top: 2%;
 }
 .table-p {
-   width: 90%;
+   width: 100%;
    height: fit-content;
    background: #c3c3c3;
    margin: 0 auto;
@@ -209,6 +207,7 @@ main {
    margin: 0 auto;
    width: 95%;
    margin-top: 5%;
+   overflow-x: auto;
 }
 .sidebar-container {
    min-height: 100%;
@@ -310,7 +309,7 @@ footer div {
    .table-container {
       width: 95%;
       margin: 0 auto;
-      overflow-x: scroll;
+      overflow-x: auto;
       margin-top: 5%;
    }
    .table-p {
@@ -373,15 +372,21 @@ footer div {
     margin: 0 auto;
     margin-bottom: 3%;
   }
-  
 } 
-@media (min-width: 720px) and (max-width: 1024px){
-  .main {
-   height: 100vh;
+@media (min-width: 720px) and (max-width: 1024px) {
+  .profile_details {
+   width: 592px;
+   margin: 10px 0 0 -1px;
   }
-  .table-container {
-   width: 80%;
-   overflow-x: scroll;
+  .profile_images .img {
+   left: 37%;
   }
   
+
+   .dashboard-items {
+
+   }
+   .main {
+      overflow: hidden;
+   }
 }

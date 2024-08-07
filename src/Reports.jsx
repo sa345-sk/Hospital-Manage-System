@@ -85,19 +85,19 @@ const Reports = () => {
         </div>
         </div>
       </div>
-        <div className="dashboard-items p-3 flex flex-row flex-wrap">
-              <div className="p-4 bg-white shadow total-patient" style={{ borderRadius: '5px'}}><Barchart chartData={chartVals}/></div>
-        <div className="p-4 bg-white shadow  revenue" style={{ borderRadius: '5px',}}>
+        <div className="dashboard-items p-1 flex flex-row flex-wrap">
+          <div className="p-1 bg-white shadow total-patient" style={{ borderRadius: '5px'}}><Barchart chartData={chartVals}/></div>
+          <div className="p-1 bg-white shadow  revenue" style={{ borderRadius: '5px',}}>
             <p className="text-center">Month: {date.getMonth() == 7 ? 'AUGUST' : 'September'}</p>
-          <Linechart chartdata={barchart}/>
-        </div>
-            <div className="p-4 bg-white shadow gender" style={{ borderRadius: '5px'}}><Piechart chartdata={piecartvals}/></div>
-            <div className="p-4 bg-white shadow ml-2 PF" style={{ borderRadius: '5px'}}>
+            <Linechart chartdata={barchart}/>
+          </div>
+            <div className="p-1 bg-white shadow gender" style={{ borderRadius: '5px'}}><Piechart chartdata={piecartvals}/></div>
+            <div className="p-1 bg-white shadow ml-1 PF" style={{ borderRadius: '5px'}}>
               <p className="font-bold">Pateint Feedbacks</p>
-              <div className="patient-complaints bg-gray-100 p-2">
+              <div className="patient-complaints bg-gray-100 p-1">
                 <span className="font-serif"><strong>Pateint Complaints</strong></span>
                  <div style={{borderRadius: '5px', background: 'white', width: '95%', margin: '0 auto', marginBottom: '10px'}} className="shadow">
-                   Not Enough Medical Staff.
+                   Not Enough Medical Staff.  
                  </div>
                  <div style={{borderRadius: '5px', background: 'white', width: '95%', margin: '0 auto', marginBottom: '10px'}} className="shadow">
                    Not Enough Beds and Medical Equipment. 
