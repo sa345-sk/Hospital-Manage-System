@@ -35,7 +35,7 @@ const Inventory = () => {
     borderCollapse: 'collapse'
   }
   return ( 
-        <div>
+        <div className="main-footer">
           <Navbar title="Inventory Management"/>
           <div id="table-container" className="m-ma " style={{width: '80%', padding: '5px'}}>
             <table  className="w-full" style={styles}>

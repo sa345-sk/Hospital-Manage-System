@@ -25,7 +25,7 @@ useEffect(() => {
     }
   }
     return ( 
-      <div>
+      <div className='main-footer'>
           <div className="schedule w-full" style={{ minHeight: '100%', height: '100vh', backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
             <div className="task">
               <div className="schdules overflow-auto w-full p-2" style={{paddingBottom: '100px', height: '95.3vh'}}>

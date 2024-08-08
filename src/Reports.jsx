@@ -39,7 +39,7 @@ const Reports = () => {
   })
   const date = new Date()
   return (
-    <div className="dahsboard w-full">
+    <div className="dahsboard w-full main-footer">
       <Navbar title="Reports & Analytics"/>
       <div className="analytics-info ">
         <div className="flex ">

@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 const Home = () => {
     return ( 
-    <div className="home h-hv">
+    <div className="home h-hv main-footer">
         <Navbar title="Hospital Management System"/>
         <div className="text-center text-3xl home-header">
             <h2>Welcome, to <strong>Hospital Management System!</strong></h2>

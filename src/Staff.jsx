@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Navbar from './components/Navbar';
 const Staff = () => {
     return ( 
-    <div>
+    <div className='main-footer'>
         <Navbar title="Staff Mannagement"/>
             <div className='w-op h-fit m-ma mt-5'>
                 <Link to='/staffmanagement/:id/info'>

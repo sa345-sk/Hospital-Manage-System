@@ -11,13 +11,16 @@ import Schedule from './Schedule'
 import Home from './Home'
 import Inventory from './Inventory'
 import Prescrption from './Prescription'
-import Footer from './Footer'
+import {useRef} from 'react'
 const App = () => {
+  const sidebarRef = useRef(null)
+   
   return (
     <Router>
       <div className="app flex">
-        <Sidebar/>
+        <Sidebar ref={sidebarRef}/>
         <main className='w-full bg-gray-100 main'>
+            <div className='routes'>
               <Routes>
                 <Route path='/' element={<Reports/>}/>
                 <Route path='/patientmanagement' element={<Patient/>}/>
@@ -27,10 +30,11 @@ const App = () => {
                 <Route path='/schedule' element={<Schedule/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route path='/inventorymanagement' element={<Inventory />}/>
-                <Route path='/prescription' element={<Prescrption />}/>
+                <Route path='/prescription' element={<Prescrption sidebarControl={sidebarRef}/>}/>
                 <Route path='*' element={<Unknown/>}/>
               </Routes>
-          <Footer></Footer>
+            </div>
+           
         </main>
       </div>
     </Router>
