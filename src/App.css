@@ -8,7 +8,7 @@
 html, body {
    height: 100%;
 }
-/*<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 12C2.25 10.4812 3.48122 9.25 5 9.25C6.51878 9.25 7.75 10.4812 7.75 12C7.75 13.5188 6.51878 14.75 5 14.75C3.48122 14.75 2.25 13.5188 2.25 12ZM5 10.75C4.30964 10.75 3.75 11.3096 3.75 12C3.75 12.6904 4.30964 13.25 5 13.25C5.69036 13.25 6.25 12.6904 6.25 12C6.25 11.3096 5.69036 10.75 5 10.75Z" fill="#1C274C"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M9.25 12C9.25 10.4812 10.4812 9.25 12 9.25C13.5188 9.25 14.75 10.4812 14.75 12C14.75 13.5188 13.5188 14.75 12 14.75C10.4812 14.75 9.25 13.5188 9.25 12ZM12 10.75C11.3096 10.75 10.75 11.3096 10.75 12C10.75 12.6904 11.3096 13.25 12 13.25C12.6904 13.25 13.25 12.6904 13.25 12C13.25 11.3096 12.6904 10.75 12 10.75Z" fill="#1C274C"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M19 9.25C17.4812 9.25 16.25 10.4812 16.25 12C16.25 13.5188 17.4812 14.75 19 14.75C20.5188 14.75 21.75 13.5188 21.75 12C21.75 10.4812 20.5188 9.25 19 9.25ZM17.75 12C17.75 11.3096 18.3096 10.75 19 10.75C19.6904 10.75 20.25 11.3096 20.25 12C20.25 12.6904 19.6904 13.25 19 13.25C18.3096 13.25 17.75 12.6904 17.75 12Z" fill="#1C274C"></path></g></svg>*/
+
 .sidebar-title {
    border-bottom: 1px solid #cbd5e1;
    color: #fafafa;
@@ -76,7 +76,56 @@ html, body {
 .update_profile form input, textarea:focus {
    outline: none;
 }
-
+.add_schedule {
+   width: 60px;
+   height: 60px;
+   background: #d8d5d5;
+   border-radius: 10px;
+   border: none;
+   position: sticky;
+   top: 100%;
+   left: 90%;
+   z-index: 1;
+   box-shadow: 0 5px 5px -5px #585858, 0 5px 7px #9c9c9c;
+}
+section {
+   width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgba(195, 195, 195, 0.5);
+      display: none;
+}
+#add-schedule {
+      height: fit-content;
+      margin-top: 20%;
+      padding: 10px;
+      width: 78%;
+      margin-left: 19%;
+}
+#add-schedule input{
+   border-radius: 8px;
+      border: 0;
+      height: 30px;
+      margin-right: 5px;
+}
+#text-input {
+   width: 75%;
+}
+#schedule-button {
+   border: 0;
+      width: 70px;
+      height: 30px;
+      border-radius: 7px;
+      margin-top: 40px;
+      background: #c3c3c3c3;
+}
+section .close {
+   
+}
+/* <svg width="64px" height="64px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>cancel</title><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="work-case" fill="#000000" transform="translate(91.520000, 91.520000)"><polygon id="Close" points="328.96 30.2933333 298.666667 1.42108547e-14 164.48 134.4 30.2933333 1.42108547e-14 1.42108547e-14 30.2933333 134.4 164.48 1.42108547e-14 298.666667 30.2933333 328.96 164.48 194.56 298.666667 328.96 328.96 298.666667 194.56 164.48"></polygon></g></g></g></svg> */
+/* <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#1C274C"></path><path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#1C274C"></path><path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#1C274C"></path></g></svg> */
 .profile_details {
    border-radius: 5px;
    border: 1px solid #a8a8a8;
@@ -177,11 +226,6 @@ html, body {
 }
 .r-5 {
    border-radius: 7px;
-}
-.task-input {
-   width: 70%;
-   top: 90%;
-   left: 25%;
 }
 .mssg {
    left: 2.5%;
@@ -301,20 +345,20 @@ footer div {
       display: block;
       width: 50px;
       height: 50px;
-      background: red;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      transform: rotate(90deg);
    }
     .sidebar {
       width: 0px;
       overflow: hidden;
+      transition: 0.4s ease-in-out;
       }
       .sidebar-links a {
          margin: 0 auto;
       }
-      .sidebar-links a div {
+      
+      .copyright {
          width: 90%;
+         text-align: center;
       }
     .main {
       width: 100vw;
@@ -339,11 +383,6 @@ footer div {
    }
    .home .login form p {
       font-size: 20px;
-   }
-   .task-input {
-      width: 90%;
-      left: 7%;
-      right: 0;
    }
    .mssg {
       left: 2.5%;

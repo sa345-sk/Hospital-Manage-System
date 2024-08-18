@@ -25,7 +25,8 @@ const Prescrption = ({sidebarControl}) => {
     const open = () => {
         if (window.innerWidth <= '640'){
             if (isOpen == false) {
-                sidebarControl.current.style.width = '100%'
+                sidebarControl.current.style.width = '256px'
+                sidebarControl.current.style.transition = ''
                 setIsOpen(true)
             } 
             else if (isOpen == true) {
