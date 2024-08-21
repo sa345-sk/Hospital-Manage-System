@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import logo from '../public/Logo.png'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Dialog from './components/Dialog'
 import Message from './components/Message'
 import Navbar from './components/Navbar'
@@ -21,25 +21,9 @@ const Prescrption = ({sidebarControl}) => {
           setTimeout(() => {setError(false)}, 4000)
       }
     }
-    
-    const open = () => {
-        if (window.innerWidth <= '640'){
-            if (isOpen == false) {
-                sidebarControl.current.style.width = '256px'
-                sidebarControl.current.style.transition = ''
-                setIsOpen(true)
-            } 
-            else if (isOpen == true) {
-                sidebarControl.current.style.width = '0px'
-                setIsOpen(false)
-            }
-        } else {
-            throw new Error('Invalid Width!')
-        }
-    }
     return ( 
         <div className='main-footer'>
-            <Navbar title="Prescription" control={open}/>
+            <Navbar title='Prescription' control={sidebarControl}/>
             <div className="prescription p-2 w-full">
                 <div className="prescription-header flex justify-between">
                     <img src={logo} alt="" />

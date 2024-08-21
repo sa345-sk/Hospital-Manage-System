@@ -6,7 +6,7 @@ import {chartVals as userData, patient, revenue, erVisits, gender} from './Vals'
 import Piechart from "./components/Piechart"
 import Navbar from "./components/Navbar";
 import Linechart from "./components/Linechart";
-const Reports = () => {
+const Reports = ({ sidebarControl }) => {
   const [chartVals, setChartVals] = useState({
     labels: userData.map(data => data.date),
     datasets: [{
@@ -40,7 +40,7 @@ const Reports = () => {
   const date = new Date()
   return (
     <div className="dahsboard w-full main-footer">
-      <Navbar title="Reports & Analytics"/>
+      <Navbar title='Reports & Analytics' control={sidebarControl}/>
       <div className="analytics-info ">
         <div className="flex ">
           <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px',}}>

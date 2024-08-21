@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
+import Navbar from './components/Navbar';
 import S from './img/sidebar-5.jpg'
 import {Link} from 'react-router-dom'
-import Navbar from './components/Navbar';
-const Staff = () => {
+const Staff = ({sidebarControl}) => {
     return ( 
     <div className='main-footer'>
-        <Navbar title="Staff Mannagement"/>
+        <Navbar title='Staff Management' control={sidebarControl}/>
             <div className='w-op h-fit m-ma mt-5'>
                 <Link to='/staffmanagement/:id/info'>
                     <div className='card shadow bg-white flex p-4' style={{ borderRadius: '15px' }}>

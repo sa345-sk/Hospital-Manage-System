@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import Navbar from "./components/Navbar"
 import profile_img from './img/IMG_20240216_172241.jpg'
 import s from './img/sidebar-3.jpg'
 import {useState} from 'react'
-const Profile = () => {
+const Profile = ({sidebarControl}) => {
   const [firstName, setFirstName] = useState('')
   const [secondName, setSecondName] = useState('')
   const [username, setUserName] = useState('')
@@ -15,7 +16,7 @@ const Profile = () => {
   const [aboutMe, setAboutMe] = useState('')
     return ( 
     <div className="profile main-footer">
-      <Navbar title="User Profile"/>
+      <Navbar title='Profile' control={sidebarControl}/>
       <div className="profile_content flex flex-row flex-wrap m-ma w-op h-fit mt-5">
         <div className="update_profile w-fit shadow bg-white ">
           <h3 className="text-2xl ml-4 mt-3">Edit Profile</h3>

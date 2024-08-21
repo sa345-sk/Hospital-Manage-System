@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import Navbar from "./components/Navbar";
 import Dialog from './components/Dialog'
 import {useState} from 'react'
 import Message from "./components/Message";
-const Inventory = () => {
+import Navbar from './components/Navbar';
+const Inventory = ({sidebarControl}) => {
   const [inventories, setInventories] = useState([])
   const [inventory,  setInventory] = useState('')
   const [price,  setPrice] = useState(0)
@@ -36,7 +37,7 @@ const Inventory = () => {
   }
   return ( 
         <div className="main-footer">
-          <Navbar title="Inventory Management"/>
+      <Navbar title='Inventory Management' control={sidebarControl}/>
           <div id="table-container" className="m-ma " style={{width: '80%', padding: '5px'}}>
             <table  className="w-full" style={styles}>
               <thead>

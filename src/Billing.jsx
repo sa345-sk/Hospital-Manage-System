@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 import Dialog from "./components/Dialog";
 import Message from "./components/Message";
+import Navbar from "./components/Navbar";
 const Billing = () => {
     const ref = useRef()
     const [addItem, setAddItem] = useState(false)
@@ -34,6 +35,8 @@ const Billing = () => {
         setShowMssg(false)
     }
     return ( 
+        <div>
+            <Navbar title='Billing'/>
         <div className="billing-invoicing bg-white shadow main-footer">
             <div className="billing-pdf p-3" ref={ref}>
                 <div className="billing-details">
@@ -43,7 +46,7 @@ const Billing = () => {
                         <p>Email: hospital@example.com</p>
                     </div>
                     <div className="billing-headers w-80">
-                        <h4 style={{ color: '#2093c6', fontSize: '24px' }}>INVOICE</h4>
+                        <h4 style={{ color: '#2093c6', fontSize: '24px' }}>BILL</h4>
                         <span>ID: 1234</span>
                     </div>
                 </div>
@@ -94,7 +97,8 @@ const Billing = () => {
             <button onClick={showItmeDialog} className="bg-sky-b w-28 hover:bg-sky-b-h focus:outline-none">Add Items</button>
             <ReactToPrint trigger={() => (<button className="bg-sky-b w-28 hover:bg-sky-b-h">Print</button>)} documentTitle={`INVOICE 1234`} content={() => ref.current}/>
             {showMssg ? <Message messageType="Error 😥" errorMssg='Kindly fill the Inputs before adding it to the Invoice' control={mssgControl}/>:null}
-    </div> 
+      </div> 
+    </div>
     );
 }
  

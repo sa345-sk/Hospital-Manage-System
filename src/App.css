@@ -97,6 +97,7 @@ section {
       background: rgba(195, 195, 195, 0.5);
       display: none;
 }
+
 #add-schedule {
       height: fit-content;
       margin-top: 20%;
@@ -121,8 +122,9 @@ section {
       margin-top: 40px;
       background: #c3c3c3c3;
 }
-section .close {
-   
+ .schedule-dialog {
+    width: 64px;
+    height: 64px;
 }
 /* <svg width="64px" height="64px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>cancel</title><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="work-case" fill="#000000" transform="translate(91.520000, 91.520000)"><polygon id="Close" points="328.96 30.2933333 298.666667 1.42108547e-14 164.48 134.4 30.2933333 1.42108547e-14 1.42108547e-14 30.2933333 134.4 164.48 1.42108547e-14 298.666667 30.2933333 328.96 164.48 194.56 298.666667 328.96 328.96 298.666667 194.56 164.48"></polygon></g></g></g></svg> */
 /* <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#1C274C"></path><path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#1C274C"></path><path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#1C274C"></path></g></svg> */
@@ -277,6 +279,15 @@ section .close {
    .sidebar-button{
       display: none;
    }
+#overlay {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: none;
+   visibility: hidden;
+}
    /* .routes {
    min-height: 100% !important;
 }
@@ -339,13 +350,36 @@ footer div {
    margin: 0 auto;
    margin-top: 10px;
 }
+/* #f04646 #ee8080*/
+.progress-bar {
+   width: 100%;
+   height: 10px;
+   animation: countdown 4s linear forwards;
+   background-image: linear-gradient(to left, rgb(236, 39, 39), #df5050, #ee8080);
+   margin-top: 5px;
+}
+@keyframes countdown {
+   from {
+      width: 100%;
+   }
+   to {
+      width: 0;
+   }
+}
 /*ABOMINABLE*/
 @media (max-width: 640px) {
    .sidebar-button {
       display: block;
-      width: 50px;
-      height: 50px;
+      width: 30px;
+      height: 30px;
       transform: rotate(90deg);
+      border-radius: 50%;
+      background: #c3c3c3;
+      transition: 0.4s ease-out;
+   background-image: url('data:image/svg+xml,%3Csvg width%3D%2230px%22 height%3D%2230px%22 viewBox%3D%220 0 24 24%22 fill%3D%22none%22 xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg id%3D%22SVGRepo_bgCarrier%22 stroke-width%3D%220%22%3E%3C/g%3E%3Cg id%3D%22SVGRepo_tracerCarrier%22 stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22%3E%3C/g%3E%3Cg id%3D%22SVGRepo_iconCarrier%22%3E%3Cpath d%3D%22M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z%22 fill%3D%22%23000000%22%3E%3C/path%3E%3Cpath d%3D%22M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z%22 fill%3D%22%231C274C%22%3E%3C/path%3E%3Cpath d%3D%22M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z%22 fill%3D%22%23000000%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
    }
     .sidebar {
       width: 0px;
