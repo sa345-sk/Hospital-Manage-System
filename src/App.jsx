@@ -6,19 +6,21 @@ import Reports from './Reports'
 import Patient from './Patient'
 import Staff from './Staff'
 import Unknown from './Unknown'
-import Profile from './Profile'
 import Billing from './Billing'
 import Schedule from './Schedule' 
 import Home from './Home'
 import Inventory from './Inventory'
 import Prescrption from './Prescription'
 import {useRef, useState} from 'react'
+import {ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client'
 const App = () => {
   const sidebarRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
   const overlayRef = useRef(null)
-  console.log(sidebarRef?.current);
-  
+  const client = new ApolloClient({
+    uri: 'http://localhost:3000/graphql',
+    cache: new InMemoryCache()
+  })
     const openSidebar = () => {
       if (innerWidth <= '640') {
         if (isOpen == false) {
@@ -38,28 +40,29 @@ const App = () => {
       }
     }
   return (
-    <Router>
-      <div className="app flex">
-        <Sidebar ref={sidebarRef}/>
-        <main className='w-full bg-gray-100 main'>   
-            <div className='routes'>
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="app flex">
+          <Sidebar ref={sidebarRef}/>
+          <main className='w-full  main'>   
+              <div className='routes'>
                 <div id='overlay' ref={overlayRef} onClick={openSidebar}></div>
-              <Routes>
-              <Route path='/' element={<Reports sidebarControl={openSidebar} />}/>
-              <Route path='/patientmanagement' element={<Patient sidebarControl={openSidebar} />}/>
-              <Route path='/staffmanagement' element={<Staff sidebarControl={openSidebar} />}/>
-              <Route path='/userprofile' element={<Profile sidebarControl={openSidebar} />}/>
-              <Route path='/billinginvoicing' element={<Billing sidebarControl={openSidebar} />}/>
-              <Route path='/schedule' element={<Schedule sidebarControl={openSidebar} />}/>
-              <Route path='/home' element={<Home sidebarControl={openSidebar} />}/>
-              <Route path='/inventorymanagement' element={<Inventory sidebarControl={openSidebar} />}/>
-              <Route path='/prescription' element={<Prescrption sidebarControl={openSidebar}/>}/>
+                <Routes>
+                <Route path='/' element={<Reports sidebarControl={openSidebar} />}/>
+                <Route path='/patientmanagement' element={<Patient sidebarControl={openSidebar} />}/>
+                <Route path='/staffmanagement' element={<Staff sidebarControl={openSidebar} />}/>
+                <Route path='/billinginvoicing' element={<Billing sidebarControl={openSidebar} />}/>
+                <Route path='/schedule' element={<Schedule sidebarControl={openSidebar} />}/>
+                <Route path='/home' element={<Home sidebarControl={openSidebar} />}/>
+                <Route path='/inventorymanagement' element={<Inventory sidebarControl={openSidebar} />}/>
+                <Route path='/prescription' element={<Prescrption sidebarControl={openSidebar}/>}/>
                 <Route path='*' element={<Unknown/>}/>
-              </Routes>
-            </div>
-        </main>
-      </div>
-    </Router>
+                </Routes>
+              </div>
+          </main>
+        </div>
+      </Router>
+    </ApolloProvider>
   )
 }
 

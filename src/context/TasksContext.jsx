@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { createContext, useReducer } from "react"
 export const TaskContext = createContext()
-export const reducer = (state, action) => {
+ const reducer = (state, action) => {
      switch (action.type) {
-        case 'SET_TASK': 
+        case 'GET': 
              return {tasks: action.payload}
-        case 'UPDATE':
+        case 'POST':
              return {tasks: [action.payload, ...state.tasks]}
         default:
             return state
@@ -12,7 +13,7 @@ export const reducer = (state, action) => {
 }
 
 export const TasksProvider = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, { tasks: [{task: 'Done'}] })
+    const [state, dispatch] = useReducer(reducer, { tasks: null})
     return (
         <TaskContext.Provider value={{...state, dispatch}}>
             {children}

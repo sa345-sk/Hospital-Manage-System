@@ -38,56 +38,7 @@ html, body {
 .dashboard-items div {
    margin-top: 10px;
 }
-.update_profile form input{
-    width: 170px;
-}
-.update_profile form {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-template-areas: 
-   "company-1 username-1 email-1"
-   "company-2 username-2 email-2"
-   "f-name-1 . s-name-1"
-   "f-name-2 . s-name-2"
-   "address-1 address-1 address-1"
-   "address-2 address-2 address-2"
-   "city-1 country-1 pc-1"
-   "city-2 country-2 pc-2"
-   "about-1 about-1 about-1"
-   "about-2 about-2 about-2"
-   " . . btn"
-   ;
-   padding: 10px;
-}
-.update_profile form input, textarea, button {
-   border: 1px solid #a8a8a8;
-   border-radius: 5px;
-   margin: 10px;
-}
-.update_profile form label {
-  color: #5a5a5a;
-  margin: 10px;
-}
-.update_profile {
-   border-radius: 5px;
-   border: 1px solid #a8a8a8;
-   height: 620px;
-}
-.update_profile form input, textarea:focus {
-   outline: none;
-}
-.add_schedule {
-   width: 60px;
-   height: 60px;
-   background: #d8d5d5;
-   border-radius: 10px;
-   border: none;
-   position: sticky;
-   top: 100%;
-   left: 90%;
-   z-index: 1;
-   box-shadow: 0 5px 5px -5px #585858, 0 5px 7px #9c9c9c;
-}
+
 section {
    width: 100%;
       height: 100%;
@@ -127,35 +78,21 @@ section {
     width: 64px;
     height: 64px;
 }
-
-/* <svg width="64px" height="64px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>cancel</title><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="work-case" fill="#000000" transform="translate(91.520000, 91.520000)"><polygon id="Close" points="328.96 30.2933333 298.666667 1.42108547e-14 164.48 134.4 30.2933333 1.42108547e-14 1.42108547e-14 30.2933333 134.4 164.48 1.42108547e-14 298.666667 30.2933333 328.96 164.48 194.56 298.666667 328.96 328.96 298.666667 194.56 164.48"></polygon></g></g></g></svg> */
-/* <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#1C274C"></path><path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#1C274C"></path><path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#1C274C"></path></g></svg> */
-.profile_details {
-   border-radius: 5px;
-   border: 1px solid #a8a8a8;
-   margin-left:  15px;
-   height: 400px;
-   width: 330px
-}
-.profile_images {
+.staff-table {
    width: 100%;
-   height: 170px;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-} 
-.profile_images .img {
-   width: 150px;
-   height: 84%;
-   border-radius: 100%;
-   border: 5px solid #8f8f8f;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   position: relative;
-   left: 27%;
-   top: 80px;
-} 
+   height: fit-content;
+}
+.staff-table thead th {
+   text-align: left;
+   padding: 1% 0;
+}
+.staff-table thead {
+   border-bottom: 1px solid #c3c3c3;
+}
+.staff-table tbody tr {
+   border-bottom: 1px solid #c3c3c3;
+}
+
 .table {
    white-space: nowrap;
    width: 100%;
@@ -208,7 +145,49 @@ section {
 }
 
 .billing-pdf {
-   height: 600px;
+   height: 550px;
+}
+/*Staff Dialog*/
+#staff-dialog {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   background: rgba(0, 0, 0, 0.5);
+   width: 100%;
+   height: 100%;
+}
+#staff-overlay {
+   width: 95%;
+   margin: 0 auto;
+   height: fit-content;
+   margin-top: 10rem;
+}
+#staff-overlay form {
+   display: flex;
+   height: fit-content;
+   width: 450px;
+   flex-flow: row wrap;
+   margin: 0 auto;
+   padding: 10px;
+   background: rgba(172, 172, 172, 0.7);
+   border-radius: 5px;
+}
+#staff-overlay form input, select{
+   height: 30px;
+   margin: 5px;
+   width: 100%;
+   border-radius: 10px;
+   padding: 2px;
+}
+#staff-overlay form select, input:focus{
+   outline: none;
+}
+#staff-overlay form button{
+   width: 100%;
+   background: #2093c6;
+   margin: 5px;
+   border-radius: 10px;
 }
 
 .dialog {
@@ -290,20 +269,6 @@ section {
    display: none;
    visibility: hidden;
 }
-   /* .routes {
-   min-height: 100% !important;
-}
-.main-footer {
-   
-   height: 100vh!important;
-   padding-bottom: 100px;
-}
-#footer {
-   position: relative;
-   clear: both;
-   background: red;
-   padding-top: -100px;
-} */
 .prescription-header img{
     width: 100px;
     height: 100px;
@@ -317,7 +282,6 @@ section {
    font-family: serif;
    font-style: italic;
 }
-
 .analytics-info {
    width: 100%;
    height: fit-content;
@@ -326,7 +290,6 @@ section {
 }
 .analytics-info div{
    width: 300px;
-
 }
 .footer-links:hover {
    text-decoration: underline;
@@ -352,12 +315,11 @@ footer div {
    margin: 0 auto;
    margin-top: 10px;
 }
-/* #f04646 #ee8080*/
 .progress-bar {
    width: 100%;
    height: 10px;
    animation: countdown 4s linear forwards;
-   background-image: linear-gradient(to left, rgb(236, 39, 39), #df5050, #ee8080);
+   background: rgb(236, 39, 39);
    margin-top: 5px;
 }
 @keyframes countdown {
@@ -441,39 +403,6 @@ footer div {
    .billing-info {
       overflow: hidden;
    }
-   .card {
-      height: 160px;
-   }
-   .card img {
-      width: 130px;
-      height: 130px;
-   }
-   .card .info {
-      width: 70%;
-      overflow-y: scroll;
-   }
-   .update_profile {
-      width: 100%;
-      height: fit-content;
-   }
-   .update_profile form{
-      width: 100%;
-      display: flex;
-      flex-flow: column;
-   }
-   .update_profile form input {
-      width: 95%;
-   }
-   .profile_details {
-      margin: 0 auto;
-      margin-top: 5%;
-      width: 100%;
-      margin-bottom: 5%;
-      height: fit-content;
-   }
-   .profile_details .img {
-      left: 32%;
-   }
   footer {
    width: 100%;
    flex-flow: row wrap;
@@ -490,13 +419,3 @@ footer div {
     margin-bottom: 3%;
   }
 } 
-@media (min-width: 720px) and (max-width: 1024px) {
-  .profile_details {
-   width: 592px;
-   margin: 10px 0 0 -1px;
-  }
-  .profile_images .img {
-   left: 37%;
-  }
-   
-}

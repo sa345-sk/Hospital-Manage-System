@@ -38,7 +38,7 @@ const Billing = () => {
         <div>
             <Navbar title='Billing'/>
         <div className="billing-invoicing bg-white shadow main-footer">
-            <div className="billing-pdf p-3" ref={ref}>
+            <div className="billing-pdf p-2" ref={ref}>
                 <div className="billing-details">
                     <div className="billing-headers w-80">
                         <h3 style={{ color: '#2093c6', fontSize: '24px'}}>Hospital</h3>
@@ -94,8 +94,8 @@ const Billing = () => {
                    <Dialog showItmeDialog={showItmeDialog} setProduct={setProduct} setAmount={setAmount} addProduct={addProduct} showAmount={true} showInvAmount={false} showPrice={false} showQty={false}/>:null
                 }
             </div> 
-            <button onClick={showItmeDialog} className="bg-sky-b w-28 hover:bg-sky-b-h focus:outline-none">Add Items</button>
-            <ReactToPrint trigger={() => (<button className="bg-sky-b w-28 hover:bg-sky-b-h">Print</button>)} documentTitle={`INVOICE 1234`} content={() => ref.current}/>
+            <button onClick={showItmeDialog} className="bg-sky-b w-28 hover:bg-sky-b-h focus:outline-none ml-1 rounded mb-1">Add Items</button>
+            <ReactToPrint trigger={() => (<button className="bg-sky-b w-28 hover:bg-sky-b-h ml-1 rounded mb-1">Print</button>)} documentTitle={`INVOICE 1234`} content={() => ref.current}/>
             {showMssg ? <Message messageType="Error 😥" errorMssg='Kindly fill the Inputs before adding it to the Invoice' control={mssgControl}/>:null}
       </div> 
     </div>

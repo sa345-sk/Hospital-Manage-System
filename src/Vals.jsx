@@ -2,23 +2,24 @@ export const chartVals = [
 {
     id: 1,
     numofpatients: 15000,
-    date: 'Week 1'    
-},
-{
-    id: 2,
-    numofpatients: 30000,
-    date: 'Week 2',
-},
-{
-    id: 3,
-    numofpatients: 58000,
-    date: 'Week 3'   
-},
-{
-    id: 4,
-    numofpatients: 15000,
-    date: 'Week 4'  
-}
+    date: 'Sep'    
+    }
+//     ,
+// {
+//     id: 2,
+//     numofpatients: 30000,
+//     date: 'Oct',
+// },
+// {
+//     id: 3,
+//     numofpatients: 58000,
+//     date: 'Nov'   
+// },
+// {
+//     id: 4,
+//     numofpatients: 15000,
+//     date: 'Dec'  
+// }
 ]
 export const patient = [
     {
@@ -67,22 +68,23 @@ export const revenue = [
         id: 1,
         date: 'week 1',
         revenue: 300000
-    },
-    {
-        id: 2,
-        date: 'week 2',
-        revenue: 582000
-    },
-    {
-        id: 3,
-        date: 'week 3',
-        revenue: 245000
-    },
-    {
-        id: 4,
-        date: 'week 4',
-        revenue: 400000
     }
+    // ,
+    // {
+    //     id: 2,
+    //     date: 'week 2',
+    //     revenue: 582000
+    // },
+    // {
+    //     id: 3,
+    //     date: 'week 3',
+    //     revenue: 245000
+    // },
+    // {
+    //     id: 4,
+    //     date: 'week 4',
+    //     revenue: 400000
+    // }
 ]
 export const erVisits = [
     {

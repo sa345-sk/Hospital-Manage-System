@@ -6,7 +6,18 @@ import {chartVals as userData, patient, revenue, erVisits, gender} from './Vals'
 import Piechart from "./components/Piechart"
 import Navbar from "./components/Navbar";
 import Linechart from "./components/Linechart";
+import { pateintsQuery, scheduleQuery, inventoryQuery } from './graphql/queries'
+import {useQueries} from './hooks/useQueries'
 const Reports = ({ sidebarControl }) => {
+  const d = useQueries(pateintsQuery)
+  const task = useQueries(scheduleQuery)
+  const item = useQueries(inventoryQuery)
+  let revenue1 = 64000000
+  let sum = 0
+  let sumtotal
+  if (item.data) {
+    sumtotal = item.data.inventories.forEach(amount => sum += parseInt(amount.amount))
+  }
   const [chartVals, setChartVals] = useState({
     labels: userData.map(data => data.date),
     datasets: [{
@@ -17,14 +28,14 @@ const Reports = ({ sidebarControl }) => {
   const [piecartvals, setPieCartVals] = useState({
     labels: ["Male", "Female"],
     datasets: [{
-      label: gender.map(data => data.gender ),
+      label: gender.map(data => data.gender),
       data: gender.map(data => data.totalVisits),
     },],
   })
   const [barchart, setBarchart] = useState({
     labels: revenue.map(data => data.date),
     datasets: [{
-      label: 'Total Revenue Per Week (N)',
+      label: 'Total Profit Per Week (N)',
       data: revenue.map(data => data.revenue),
       backgroundColor: ['#ff7f26', '#c6c93c', '#80c93c', '#21ce7d']
     }],
@@ -38,123 +49,50 @@ const Reports = ({ sidebarControl }) => {
     }]
   })
   const date = new Date()
+
+  if (d.data) {
+    let k = d.data.pateints.map((m) => m.gender)
+   console.log(k);
+   
+ }
   return (
     <div className="dahsboard w-full main-footer">
-      <Navbar title='Reports & Analytics' control={sidebarControl}/>
-      <div className="analytics-info ">
-        <div className="flex ">
-          <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px',}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2 p-2">
-              <span>Available Beds:</span>
-              <strong>15</strong>
-            </div>
-            <div className="flex justify-between m-ma w-75 pl-2 pr-2 " style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
-              <span>Total Beds:</span>
-              <span>600</span>
-            </div>
-          </div>
-          <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px'}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700 p-2">
-              <span>Failed Appointment:</span>
-              <strong>15</strong>
-            </div>
-            <div className="flex justify-between m-ma w-75 pl-2 pr-2" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
-              <span>Total Appointment (per week):</span>
-              <span>50</span>
-            </div>
-          </div>
-          <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px'}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700 p-2">
-              <span>Health Trends:</span>
-              <strong>COVID-19</strong>
-            </div>
-            <div className="flex justify-between m-ma w-75 pl-2 pr-2" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
-              <span>Total Cases (per week):</span>
-              <span>120</span>
-            </div>
-          </div>
-          <div className="bg-white shadow w-72 h-20 m-1" style={{borderRadius: '5px'}}>
-            <div className="h-12 w-75 m-ma flex justify-between pt-2 text-red-700 p-2">
-              <span>Global Outbreak:</span>
-              <strong>Cancer</strong>
-            </div>
-            <div className="flex justify-between m-ma w-75 pl-2 pr-2" style={{ borderTop: '1px solid #c3c3c3', color: '#777777'}}>
-              <span>Total Cases (per week):</span>
-              <span>50</span>
-            </div>
-        </div>
-        </div>
-      </div>
+        <Navbar title='Reports & Analytics' control={sidebarControl}/>
         <div className="dashboard-items p-1 flex flex-row flex-wrap">
-          <div className="p-1 bg-white shadow total-patient" style={{ borderRadius: '5px'}}><Barchart chartData={chartVals}/></div>
-          <div className="p-1 bg-white shadow  revenue" style={{ borderRadius: '5px',}}>
-            <p className="text-center">Month: {date.getMonth() == 7 ? 'AUGUST' : 'September'}</p>
-            <Linechart chartdata={barchart}/>
-          </div>
-            <div className="p-1 bg-white shadow gender" style={{ borderRadius: '5px'}}><Piechart chartdata={piecartvals}/></div>
-            <div className="p-1 bg-white shadow ml-1 PF" style={{ borderRadius: '5px'}}>
-              <p className="font-bold">Pateint Feedbacks</p>
-              <div className="patient-complaints bg-gray-100 p-1">
-                <span className="font-serif"><strong>Pateint Complaints</strong></span>
-                 <div style={{borderRadius: '5px', background: 'white', width: '95%', margin: '0 auto', marginBottom: '10px'}} className="shadow">
-                   Not Enough Medical Staff.  
-                 </div>
-                 <div style={{borderRadius: '5px', background: 'white', width: '95%', margin: '0 auto', marginBottom: '10px'}} className="shadow">
-                   Not Enough Beds and Medical Equipment. 
-                 </div>
-              </div>
-              <div className="patient-complaints bg-gray-100 p-2">
-                <span className="font-serif"><strong>Patient Satisfaction (Based on Pateints Complaints)</strong></span>
-                 <div>
-              <span style={{ fontStyle: 'italic', color: '#4de382', display: 'flex', justifyContent: 'space-between'}}>Satisfaction Rates: <strong>78.9%</strong></span>
-                 </div>
-              </div>
-              <div className="patient-complaints bg-gray-100 p-2">
-                <span className="font-serif"><strong>Patient Satisfaction (Based on Pateints Complaints)</strong></span>
-                 <div>
-              <span style={{ fontStyle: 'italic', color: '#4de382', display: 'flex', justifyContent: 'space-between'}}>Satisfaction Rates: <strong>78.9%</strong></span>
-                 </div>
-              </div>
+            <div className="p-1 bg-white shadow total-patient" style={{ borderRadius: '5px'}}><Barchart chartData={chartVals}/></div>
+            <div className="p-1 bg-white shadow  revenue" style={{ borderRadius: '5px',}}>
+              <Linechart chartdata={barchart}/>
             </div>
-              <div className="p-4 bg-white shadow ER" style={{ borderRadius: '5px'}}>
-                  <h3 className="font-bold">Emergency Department Statistics</h3>
-                  <p>ER VISITS:</p>
-                  <p className="text-center">Month: {date.getMonth() == 7 ? 'AUGUST' : 'September'}</p>
-                  <Piechart chartdata={er}/>
-                  <p className="font-serif font-semibold">ER TRENDS</p>
-                  <div className="flex overflow-x-auto">
-                    <div className="bg-gray-100 w-40 ml-1 mr-1 mb-4">
-                      <div className="font-medium w-75 m-ma text-center">Amputation</div>
-                      <div style={{borderTop: '1px solid white'}} className="w-75 m-ma text-center">
-                        <strong>Total Cases: 15</strong>
-                      </div>
-                    </div>
-                    <div className="bg-gray-100 w-40 ml-1 mr-1 mb-4">
-                      <div className="font-medium w-75 m-ma text-center">Pregnancy</div>
-                      <div style={{borderTop: '1px solid white'}} className="w-75 m-ma text-center">
-                        <strong>Total Cases: 30</strong>
-                      </div>
-                    </div>
-                    <div className="bg-gray-100 w-40 ml-1 mr-1 mb-4">
-                      <div className="font-medium w-75 m-ma text-center">Kidney</div>
-                      <div style={{borderTop: '1px solid white'}} className="w-75 m-ma text-center">
-                        <strong>Total Cases: 9</strong>
-                      </div>
-                    </div>
-                    <div className="bg-gray-100 w-40 ml-1 mr-1 mb-4">
-                      <div className="font-medium w-75 m-ma text-center">Brain Surgery</div>
-                      <div style={{borderTop: '1px solid white'}} className="w-75 m-ma text-center">
-                        <strong>Total Cases: 5</strong>
-                      </div>
-                    </div>
-                    <div className="bg-gray-100 w-40 ml-1 mr-1 mb-4">
-                      <div className="font-medium w-75 m-ma text-center">Diabetis</div>
-                      <div style={{borderTop: '1px solid white'}} className="w-75 m-ma text-center">
-                        <strong>Total Cases: 5</strong>
-                      </div>
-                    </div>
-                  </div>
+        <div className="p-1 bg-white shadow gender" style={{ borderRadius: '5px' }}
+        >
+          <p className="font-medium text-center">Most Visited Gender</p>
+          <Piechart chartdata={piecartvals} />
         </div>
+              <div className="p-1 bg-white shadow ml-1 PF" style={{ borderRadius: '5px'}}>
+                <p className="font-bold text-center">Total Revenue</p>
+                <div className="bg-gray-200 h-20 text-center font-medium text-green-500">
+                 N{revenue1}
+                 </div>
+                <p className="font-bold text-center">Total Cost</p>
+                <div className="bg-gray-200 h-20 text-center font-medium text-red-500">
+                    N{sum}
+                </div>
+                <p className="font-bold text-center">Profit</p>
+                <div className="bg-gray-200 h-20 text-center font-medium">
+                  {item.data && `Revenue - Cost = ${revenue1 - sum}`}
+                </div>
+                <p className="font-bold text-center">Total Appointments</p>
+                <div className="bg-gray-200 h-20 text-center font-medium pt-5">
+                   {(task.data) ? (task.data.schedules
+              .length > 0) ? `You currently have ${task.data.schedules.length} appointments` : ('You currently have 0 Appointments.') : ('Please check your internet connection!')}
+                </div>
+              </div>
+              <div className="p-1 bg-white shadow ml-1 PF" style={{ borderRadius: '5px'}}>
+                <p className="font-bold text-center">Total Pateints Visited (Based on the Pateints Database)</p>
+                <div className="bg-gray-200 p-1">
+                  <span className="font-medium">{(d.data) ? (d.data.pateints.length > 0) ? `${d.data.pateints.length} visited the hospital` : ('You currently have 0 Pateints.') : ('Please check your internet connection!')}</span>
+                </div>
+              </div>
         </div>
     </div>
   )
